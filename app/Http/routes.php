@@ -45,6 +45,7 @@ Route::group(['middleware' => 'HomeLogin','namespace'=>'Home'], function () {
 
     //发现
     Route::get('find/index','FindController@index');
+    Route::get('find/nearby','FindController@nearby');
 
 
 

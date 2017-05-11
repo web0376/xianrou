@@ -28,7 +28,7 @@ class UserController extends Controller
     {
         echo rand();
     }
-    public function index(){
+    public function index(Request $request){
         $uid = Session::get('wx_uid');
         $openid = Session::get('wx_openid');
         $userRow = User::where(['openid'=>$openid,'id'=>$uid])->first();
@@ -43,8 +43,10 @@ class UserController extends Controller
         }
         
         //$user = Redis::get('hello');
+        $uri = $request->path();
+        $uri = explode('/',$uri);
 
-        return view('Home.User.index',compact('userRow','weiboList','sellWeixinStatus'));
+        return view('Home.User.index',compact('userRow','weiboList','sellWeixinStatus','uri'));
     }
     public function weiboImgText(Request $request){
 

@@ -1,20 +1,19 @@
+
+
 <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
 <script type="text/javascript" src="/home/js/layer_mobile/layer.js"></script>
 <!--底部固定-->
 <div class="foot"></div>
 <section class="fixed">
     <ul class="clearfix">
-        <li class="fixed-f1"><a href="/"><i></i><p>鲜肉</p></a></li>
-        <li class="fixed-f2"><a href="{{url('find/index')}}"><i></i><p>发现</p></a></li>
+        <li class="fixed-f1 @if($uri == 'index') bg  @endif"><a href="/"><i></i><p>鲜肉</p></a></li>
+        <li class="fixed-f2 @if($uri['0'] == 'find') bg  @endif"><a href="{{url('find/index')}}"><i></i><p>发现</p></a></li>
         <li class="fixed-f3"><a href="javascript:;" id="fabuweibo"><span></span></a></li>
         <li class="fixed-f4"><a href=""><i></i><p>聊天</p></a></li>
-        <li class="fixed-f5 bg"><a href="{{url('user/index')}}"><i></i><p>我6</p></a></li>
+        <li class="fixed-f5 @if($uri['0'] == 'user') bg  @endif"><a href="{{url('user/index')}}"><i></i><p>我6</p></a></li>
     </ul>
 </section>
-<?php
-        var_dump($_GET);
 
-        ?>
 <link rel="stylesheet" href="/home/css/reset.css"/>
 <link rel="stylesheet" href="/home/css/public.css"/>
 <link rel="stylesheet" href="/home/css/index.css"/>

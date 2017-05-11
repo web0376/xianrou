@@ -16,9 +16,9 @@ use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
 
 class IndexController extends Controller
 {
-    public function index(){
-
-        return view('Home.Index.index');
+    public function index(Request $request){
+        $uri = 'index';
+        return view('Home.Index.index',compact('uri'));
     }
     public function sendMsg(){
         // 配置信息
