@@ -1,0 +1,86 @@
+		*{
+			box-sizing:border-box;
+		}
+		body{
+			padding: 0;
+			margin: 0;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		}
+		/*头部使用flex布局*/
+		#header{
+			height: 45px;
+			line-height: 45px;
+			border-bottom: 1px solid #ccc;
+			display: flex;
+			justify-content: space-between;
+			text-align: center;
+			padding: 0 10px;
+
+		}
+		#header .left{
+			color: #bbb;
+			text-decoration: none;
+		}
+		#header .right{
+			color: #FF7175;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		#header .title{
+			font-size: 18px;
+			color: #555;
+		}
+		#content{
+			width: 100%;
+			resize: none;
+			border: none;
+			outline: none;
+			padding: 10px;
+			font-size: 15px;
+		}
+		#imgfile{
+			border-bottom: 1px solid #ccc;
+			padding: 10px;
+		}
+		/*上传摁扭美化样式*/
+		.file{
+			position: relative;
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			overflow: hidden;
+			background: #eee;
+		}
+
+		.file input{
+			position: absolute;
+			z-index: 2;
+			width: 10000px;
+			height: 100000px;
+			top: 95px;
+			left: -100px;
+		}
+		/*结束*/
+		.file span{
+			position: absolute;
+			left: 38px;
+			top: 20px;
+		}
+		/*自定义+号*/
+		.file i{
+			position: relative;
+		}
+		.file i:before{
+			position: absolute;
+			content: "";
+			height: 40px;
+			border-left: 2px solid #ccc;
+		}
+		.file i:after{
+			position: absolute;
+			content: "";
+			width: 40px;
+			border-top: 2px solid #ccc;
+			top: 19px;
+			left: -19px;
+		}

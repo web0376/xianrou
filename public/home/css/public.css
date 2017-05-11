@@ -1,0 +1,310 @@
+*{
+    color: #555;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+}
+html{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-tap-highlight-color:transparent;
+}
+.clear {
+    clear: both;
+    height: 0px;
+    overflow: hidden;
+}
+.clear {
+    zoom: 1;
+}
+/*��ҳ����ͷ��*/
+.blankNav{
+    width: 100%;
+    height: 0.72rem;
+    margin-bottom: 0.08rem;
+}
+.find_nav {
+    width: 100%;
+    height: 0.72rem;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: -moz-box;
+    display: -webkit-box;
+    display: box;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 0.1rem;
+}
+
+.find_nav_left {
+    width: 100%;
+    height: 0.72rem;
+    position: relative;
+    overflow: hidden;
+    -moz-box-flex: 1;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.find_nav_list {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left:-78px;
+}
+.find_nav_list ul {
+    margin: 0 auto;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    font-size: 0;
+}
+.find_nav_list ul li {
+    margin: 0 8px;
+    display: inline-block;
+}
+.find_nav_list ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 0.72rem;
+    font-size:0.3rem;
+    text-align: center;
+    color: #666;
+}
+.find_nav_cur a {
+    color: #ff5a5f !important;
+}
+.find_nav_list ul .sideline {
+    position: absolute;
+    left: 0;
+    display: block;
+    border: 0;
+    height: 2px;
+    background-color: #ff5a5f;
+    top: 0.6rem;
+    pointer-events: none;
+}
+.search_logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 0.06rem;
+    display: block;
+    width: 0.6rem;
+    height:0.6rem;
+    text-align: center;
+    background: url("../images/ic_search_red_500_24dp.png") no-repeat;
+    background-size: contain;
+}
+.screen-xuan{
+    position: absolute;
+    right: 2%;
+    top: 0;
+}
+.screen {
+    display: block;
+    height: 0.72rem;
+    line-height:  0.72rem;
+    text-align: center;
+    font-size: 0.28rem;
+    color: #000;
+
+}
+.screenFix{
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0.72rem;
+    position: fixed;
+    z-index:99996;
+    border-top: 1px solid #e6e6e6;
+}
+.screenFix .scr-choose{
+    position: relative;
+}
+.screenFix  .border{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: #e6e6e6;
+}
+.screenFix .scr-choose a{
+    float: left;
+    display: block;
+    text-align: center;
+     width: 50%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    font-size: 0.28rem;
+    color: #ff5a5f;
+    background: #ffffff;
+}
+.screenFix  .scr-all{
+    text-align: center;
+    font-size: 0.28rem;
+    color: #ff5a5f;
+    width: 100%;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    background: #f1f1f1;
+    border-top: 1px solid #e6e6e6;
+}
+/*��ҳ����ͷ��*/
+.top{
+    position: fixed;
+    background: #ffffff;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 0.72rem;
+    overflow: hidden;
+    border-bottom: 1px solid #e6e6e6;
+}
+.topCon{
+    padding: 0 4%;
+    width: 92%;
+}
+.top .back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 0.18rem;
+    margin-left: 4%;
+    display: block;
+    width: 0.2rem;
+    height: 0.34rem;
+    background: url("../images/back.png") no-repeat;
+    background-size: contain;
+}
+.top .topAlign{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    font-size: 0.3rem;
+    text-align: center;
+}
+.top .topRecord{
+    margin-right: 3%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    font-size: 0.26rem;
+    display: block;
+}
+.blankTop{
+    height: 0.72rem;
+
+}
+/*�ײ��̶�*/
+.foot{
+    width: 100%;
+    height:1.2rem;
+}
+.fixed{
+    position: fixed!important;
+    left: 0;
+    bottom: 0;
+    height:1rem;
+    width: 100%;
+    z-index: 8;
+    background: #ffffff;
+    border-top: 1px solid #cccccc;
+}
+/*.fixed ul li a:hover{*/
+/*background: #18b854;*/
+/*}*/
+.fixed ul li{
+    float: left;
+    width: 20%;
+    height: 1rem;
+    text-align: center;
+}
+.fixed ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.fixed ul li a{
+    -webkit-tap-highlight-color: rgba(24,185,84,-56);
+}
+.fixed ul li i{
+    margin-top: 0.1rem;
+    display: inline-block;
+    width: 0.5rem;
+    height:  0.5rem;
+
+}
+.fixed ul li.fixed-f1 i{
+    background: url("../images/fresh_normal.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f2 i{
+    background: url("../images/discover.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f3 span{
+    margin-top: 0.1rem;
+    display: inline-block;
+    width: 0.8rem;
+    height:  0.8rem;
+    background: url("../images/camera.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f4 i{
+    background: url("../images/chat_normal.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f5 i{
+    background: url("../images/me_normal.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f1:hover  i{
+    background: url("../images/fresh_pressed.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f2:hover  i{
+    background: url("../images/discover_pressed.png") no-repeat;
+    background-size: contain;
+}
+
+.fixed ul li.fixed-f4:hover  i{
+    background: url("../images/chat_selected.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f5:hover  i{
+    background: url("../images/me_selected.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f1.bg i{
+    background: url("../images/fresh_pressed.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f2.bg  i{
+    background: url("../images/discover_pressed.png") no-repeat;
+    background-size: contain;
+}
+
+.fixed ul li.fixed-f4.bg  i{
+    background: url("../images/chat_selected.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li.fixed-f5.bg i{
+    background: url("../images/me_selected.png") no-repeat;
+    background-size: contain;
+}
+.fixed ul li p{
+    font-size:0.2rem;
+    line-height:0.32rem;
+}
