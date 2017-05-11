@@ -43,6 +43,9 @@ Route::group(['middleware' => 'HomeLogin','namespace'=>'Home'], function () {
     Route::any('user/edit','UserController@edit');
     Route::get('user/view/{id}','UserController@viewData');
 
+    //发现
+    Route::get('find/index','FindController@index');
+
 
 
 

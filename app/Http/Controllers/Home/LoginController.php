@@ -16,6 +16,7 @@ class LoginController extends CommonController
 {
     public function login()
     {
+        /*
         if($input = Input::all()){
             $code = new \Code;
             $_code = $code->get();
@@ -31,7 +32,7 @@ class LoginController extends CommonController
 
         }else {
             return view('admin.login');
-        }
+        }*/
     }
 
     public function quit()

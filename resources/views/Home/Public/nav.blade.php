@@ -5,7 +5,7 @@
 <section class="fixed">
     <ul class="clearfix">
         <li class="fixed-f1"><a href="/"><i></i><p>鲜肉</p></a></li>
-        <li class="fixed-f2"><a href=""><i></i><p>发现</p></a></li>
+        <li class="fixed-f2"><a href="{{url('find/index')}}"><i></i><p>发现</p></a></li>
         <li class="fixed-f3"><a href="javascript:;" id="fabuweibo"><span></span></a></li>
         <li class="fixed-f4"><a href=""><i></i><p>聊天</p></a></li>
         <li class="fixed-f5 bg"><a href="{{url('user/index')}}"><i></i><p>我6</p></a></li>
