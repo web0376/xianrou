@@ -460,4 +460,17 @@ class UserController extends Controller
         }
 
     }
+    //发表视频动态
+    public function weiboVideo(Request $request)
+    {
+        $uid = Session::get('wx_uid');
+        if($request->isMethod('POST')) {
+            $post = Input::all(); 
+            $content = $post['content'];
+            $video = $request->file('videos');
+            var_dump($video);
+        }else{
+            return view('Home.User.weiboVideo');
+        }
+    }
 }

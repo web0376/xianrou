@@ -45,8 +45,8 @@ class IndexController extends Controller
     public function test(Request $request){
 
         Session::put('key', 'value');
-        Session::put('wx_uid',2);
-        Session::put('wx_openid','ofOvawZfAoMktKg99I7elTN1oWks');
+        Session::put('wx_uid',1);
+        Session::put('wx_openid','4564651616');
 
         //$request->session()->put('key2','val2');
 

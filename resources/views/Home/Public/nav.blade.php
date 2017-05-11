@@ -46,7 +46,7 @@
             </a>
         </li>
         <li>
-            <a href="javascript:;" class="kefu">
+            <a href="{{url('user/weiboVideo')}}">
                 <i class="publish-i3"></i>
                 <p>视频动态</p>
             </a>

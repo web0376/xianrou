@@ -30,6 +30,10 @@ Route::group(['middleware' => 'HomeLogin','namespace'=>'Home'], function () {
     Route::any('user/weixinXiajia','UserController@weixinXiajia');
     Route::any('user/upload','UserController@upload');
     Route::any('user/weiboImgText','UserController@weiboImgText');
+    Route::any('user/weiboVideo','UserController@weiboVideo');
+
+
+
     Route::any('weibo/delete','UserController@weiboDel');
     Route::any('weibo/top','UserController@weiboTop');
     Route::any('weibo/praise','UserController@praise');
