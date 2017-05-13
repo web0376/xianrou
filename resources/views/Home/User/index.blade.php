@@ -182,8 +182,9 @@
                         </a>
                     </div>
                     <div class="picV">
-                        <img src="/home/images/img1.png" alt=""/>
-                        <div class="playV"></div>
+                        {!!  getWeiboVideo($v->id) !!}
+                        {{--<img src="/home/images/img1.png" alt=""/>--}}
+                        {{--<div class="playV"></div>--}}
                     </div>
                     <div class="rec-actions clearfix">
 
@@ -191,7 +192,7 @@
                         <button class="praise-actions" onclick="praise(this,'{{$v->id}}')">
                             {!!  getWeiboSupportStyle($v->id) !!}<span>{{getWeiboSupport($v->id)}}</span></button>
                         <button class="comment-actions" onclick='location.href="{{url('winfo/'.$v->id)}}"'><i></i><span>{{$v->comment_count}}</span></button>
-                        <button class="video-actions"><i></i><span>1</span></button>
+                        {{--<button class="video-actions"><i></i><span>1</span></button>--}}
 
                         @if($v->is_top == 1)
                             <div class="res-foot" onclick="button_del(this,'{{$v->id}}',1)"><span class="res-foot"></span></div>

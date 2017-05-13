@@ -47,7 +47,10 @@ return [
             'driver' => 'local',
             'root'   => storage_path().'/app',
         ],
-
+        'uploads' => [
+            'driver' => 'local',
+            'root'   => public_path().'/uploads/video',
+        ],
         's3' => [
             'driver' => 's3',
             'key'    => 'your-key',

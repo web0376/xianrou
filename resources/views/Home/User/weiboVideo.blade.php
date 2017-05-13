@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
     <script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
-    <script>
-        function preventDefault(ev) {
-            ev.preventDefault()
-        }
-        document.addEventListener('touchmove', preventDefault, false)
-    </script>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Home/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="/Home/js/fileinput.js" type="text/javascript"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        .file-preview-frame{margin: 8px auto;float: none;}
+        .file-caption-main{width: 85%;margin: auto;}
+        .file-preview{width: 85%;margin: auto;margin-bottom: 5px;}
+    </style>
 </head>
-
 <body>
-
 
 <header id="header">
     <a class="left" href="javascript:history.back();">取消</a>
@@ -36,25 +38,17 @@
         </a>
     </div>
 </div>
-<div class="weui-cells weui-cells_form">
-    <div class="weui-cell">
-        <div class="weui-cell__bd">
-            <div class="weui-uploader">
-                <div class="weui-uploader__bd">
-                    <ul class="weui-uploader__files" id="uploaderFiles">
-
-                    </ul>
-                    <div class="weui-uploader__input-box">
-                        <input id="uploaderInput" class="weui-uploader__input" type="file" accept="video/*" name="videos" multiple>
-                    </div>
-                </div>
-            </div>
+    <div class="htmleaf-container" style="margin-bottom: 30px;">
+        <div class="container kv-main">
+                <input id="file-0a" name="videos" class="file" type="file" data-min-file-count="1" accept="video/*">
         </div>
     </div>
-</div>
+
 </form>
 <script type="text/javascript">
-
+    @if(count($errors))
+        $.toast("{{$errors}}", "cancel");
+    @endif
 </script>
 
 <script>

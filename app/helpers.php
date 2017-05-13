@@ -92,3 +92,20 @@ function getWeiboSupportStyle($id){
         return '<i></i>';
     }
 }
+
+
+
+
+
+//获取用户发表的说说中的视频
+function getWeiboVideo($id){
+    $uid = \Illuminate\Support\Facades\Session::get('wx_uid');
+    $data = \App\Http\Model\Weibo::find($id,['data']);
+    $data = unserialize($data->data);
+
+    $row = \App\Http\Model\Picture::select('path')->where(['id'=>$data['attach_id']])->first();
+    $path = $row->path;
+    if($path){
+        return '<video controls poster="/Home/images/img1.png" width="100%" height="100%" autobuffer><source src="/uploads/video/'.$path.'" type="video/mp4"></video>';
+    }
+}

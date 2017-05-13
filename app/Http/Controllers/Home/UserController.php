@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -465,10 +466,56 @@ class UserController extends Controller
     {
         $uid = Session::get('wx_uid');
         if($request->isMethod('POST')) {
-            $post = Input::all(); 
+            $post = Input::all();
             $content = $post['content'];
-            $video = $request->file('videos');
-            var_dump($video);
+            $file = $request->file('videos');//'videos'
+            if(!$content){
+                return back()->with('errors','说点什么吧');
+            }
+            if(!$file){
+                return back()->with('errors','请上传视频');
+            }
+            if($file->isValid()){
+                $clientName = $file->getClientOriginalName();
+                $realPath   = $file->getRealPath();
+                $entension  = $file->getClientOriginalExtension(); //上传文件的后缀.
+                $mimeTye    = $file->getMimeType();
+                $newName    = $uid.'-'.createNonceStr(15,'str').'.mp4';
+                $size       = round($file->getSize()/1024/1024);
+                if($size > 20){
+                    return back()->with('errors','视频最大20M');
+                }
+                //可上传七牛等云存储，拉取视频时可获得视频缩略图
+                $bool = Storage::disk('uploads')->put($newName,file_get_contents($realPath));
+                if($bool){
+                    $picData['type']        = 'local';
+                    $picData['path']        = $newName;
+                    $picData['create_time'] = time();
+                    $re = Picture::create($picData);
+                    if(!$re){
+                        return back()->with('errors','写入数据失败');
+                    }
+                    $imgID = $re->id;
+                    if($imgID){
+                        $hello['attach_id'] = $imgID;
+                        $wData['data'] = serialize($hello);
+                    }else{
+                        $wData['data'] = 'a:0:{}';
+                    }
+                    $wData['uid']       = $uid;
+                    $wData['content']   = $content;
+                    $wData['create_time'] = time();
+                    $wData['type']      = 'video';
+                    $re = Weibo::create($wData);
+                    if($re){
+                        return redirect('user/index')->with('success','发布动态成功');
+                    }else{
+                        return back()->with('errors','发布动态失败');
+                    }
+                }else{
+                    return back()->with('errors','文件上传失败');
+                }
+            }
         }else{
             return view('Home.User.weiboVideo');
         }
